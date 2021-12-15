@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Good Thymes Virtual Grocery</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p th:text="'Фамилия: ' + ${person.lastName}"/>
+<p th:text="'Имя: ' + ${person.firstName}"/>
+<p th:text="'Отчество: ' + ${person.patronymic}"/>
+<p th:text="'Возраст: ' + ${person.age}"/>
+<p th:text="'Зарплата' + ${person.salary}"/>
+<p th:text="'E-mail: ' + ${person.email}"/>
+<p th:text="'Место работы: ' + ${person.organization}"/>
+<a href="/person">return</a>
+</body>
+</html>

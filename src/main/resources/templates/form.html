@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Good Thymes Virtual Grocery</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>From</h1>
+<form action="#" th:action="@{/person}" th:object="${person}" method="post">
+	<p>
+		<div>Фамилия: <input type="text" th:field="*{lastName}"></div>
+		<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name error</div>
+	</p>
+	<p>
+		<div>Имя: <input type="text" th:field="*{firstName}"></div>
+		<div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First Name error</div>
+	</p>
+	<p>
+		<div>Отчество: <input type="text" th:field="*{patronymic}"></div>
+		<div th:if="${#fields.hasErrors('patronymic')}" th:errors="*{patronymic}">Patronymic error</div>
+	</p>
+	<p>
+		<div>Возраст: <input type="text" th:field="*{age}"></div>
+		<div th:if="${#fields.hasErrors('age')}" th:errors="*{age}">age error</div>
+	</p>
+	<p>
+		<div>Зарплата: <input type="text" th:field="*{salary}"></div>
+		<div th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}">salary error</div>
+	</p>
+	<p>
+		<div>E-mail: <input type="text" th:field="*{email}"></div>
+		<div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email error</div>
+	</p>
+	<p>
+		<div>Место работы: <input type="text" th:field="*{organization}"></div>
+		<div th:if="${#fields.hasErrors('organization')}" th:errors="*{organization}">organization error</div>
+	</p>
+	<p><input type="submit" value="Submit"><input type="reset" value="Reset"></p>
+</form>
+</body>
+</html>
