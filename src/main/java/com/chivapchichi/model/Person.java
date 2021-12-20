@@ -1,12 +1,24 @@
 package com.chivapchichi.model;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.lang.NonNull;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
-import java.io.Serializable;
+import java.io.File;
+import java.io.IOException;
 
-public class Person implements Serializable {
+public class Person {
+    public static File CLASSPATH;
+
+    static {
+        try {
+            CLASSPATH = new ClassPathResource("persons.csv").getFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @NonNull
     @Size(min = 3, max = 30)
@@ -23,6 +35,7 @@ public class Person implements Serializable {
     private int age = 0;
 
     @NonNull
+    @Min(0)
     private int salary = 0;
 
     @NonNull
@@ -31,6 +44,19 @@ public class Person implements Serializable {
 
     @NonNull
     private String organization = "";
+
+    public Person() {
+    }
+
+    public Person(@NonNull String firstName, @NonNull String lastName, String patronymic, int age, int salary, @NonNull String email, @NonNull String organization) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
+        this.age = age;
+        this.salary = salary;
+        this.email = email;
+        this.organization = organization;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -86,5 +112,13 @@ public class Person implements Serializable {
 
     public void setOrganization(String organization) {
         this.organization = organization;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return /*age == person.age && salary == person.salary && */firstName.equals(person.firstName) && lastName.equals(person.lastName)/* && Objects.equals(patronymic, person.patronymic) && email.equals(person.email) && organization.equals(person.organization)*/;
     }
 }

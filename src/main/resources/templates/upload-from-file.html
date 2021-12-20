@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Good Thymes Virtual Grocery</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<form action="#" th:action="@{/upload-from-file}" th:object="${file}" method="post">
+	<input type="file" th:object="${file}">
+	<input type="submit" value="Submit">
+</form>
+</body>
+</html>

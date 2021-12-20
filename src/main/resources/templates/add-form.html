@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>From</h1>
-<form action="#" th:action="@{/person}" th:object="${person}" method="post">
+<form action="#" th:action="@{/add-person}" th:object="${person}" method="post">
 	<p>
 		<div>Фамилия: <input type="text" th:field="*{lastName}"></div>
 		<div th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last Name error</div>
