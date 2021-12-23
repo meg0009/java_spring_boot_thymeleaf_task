@@ -10,16 +10,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class Person {
-    public static File CLASSPATH;
-
-    static {
-        try {
-            CLASSPATH = new ClassPathResource("persons.csv").getFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     @NonNull
     @Size(min = 3, max = 30)
     private String firstName = "";

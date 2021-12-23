@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Good Thymes Virtual Grocery</title>
+	<title>Found person from</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<h1>From</h1>
+<h1>Found person from</h1>
 <form action="#" th:action="@{/get-person}" th:object="${foundPerson}" method="post">
 	<p>
 	<div>Фамилия: <input type="text" th:field="*{lastName}"></div>
@@ -17,5 +17,8 @@
 	</p>
 	<p><input type="submit" value="Submit"><input type="reset" value="Reset"></p>
 </form>
+<p>
+	<a href="/menu">return to menu</a>
+</p>
 </body>
 </html>

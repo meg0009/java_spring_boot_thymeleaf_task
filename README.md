@@ -1,2 +1,3 @@
 #  java_spring_boot_thymeleaf_task
-В процессе выполнения
+Выполнено задание связанное с pring Boot, Thymeleaf, HTTP protocol(POST,GET Request,Form submission), Java IO
+файл для тестовой загрузки данных из файла лежит в директории "file for tests"

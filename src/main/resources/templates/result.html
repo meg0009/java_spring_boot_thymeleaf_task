@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Good Thymes Virtual Grocery</title>
+	<title>We add some person</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
@@ -12,6 +12,14 @@
 <p th:text="'Зарплата' + ${person.salary}"/>
 <p th:text="'E-mail: ' + ${person.email}"/>
 <p th:text="'Место работы: ' + ${person.organization}"/>
-<a href="/add-person">return</a>
+
+<p>
+	<div>
+		<a href="/add-person">return</a>
+	</div>
+	<div>
+		<a href="/menu">return to menu</a>
+	</div>
+</p>
 </body>
 </html>
