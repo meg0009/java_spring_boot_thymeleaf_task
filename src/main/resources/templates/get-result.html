@@ -5,6 +5,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<p th:text="'Запрос выполнен из браузера: ' + ${browser}"/>
+<p th:text="'Время запроса: ' + ${time}"/>
 <p th:text="'Фамилия: ' + ${person.lastName}"/>
 <p th:text="'Имя: ' + ${person.firstName}"/>
 <p th:text="'Отчество: ' + ${person.patronymic}"/>
